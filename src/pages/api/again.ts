@@ -9,8 +9,10 @@ interface Currency {
 }
 
 async function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
- 
-  return (finalCurrencies && console.log(finalCurrencies));
+    const final = await finalCurrencies;
+    console.log(final);
+    
+  return final;
 }
 
 // This gets called on every request
@@ -21,6 +23,8 @@ async function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
   );
   const data = await res.text();
   const finalCurrencies: Currency[] = [];
+
+ 
 
 
  async function awaitData(){
@@ -46,13 +50,18 @@ async function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
  async function logThis(){
   const dat = await awaitData();
   console.log('-------------------------')
-  console.log(finalCurrencies);
+  return console.log(finalCurrencies);
+
  }
  logThis()
       // Pass data to the page via props
 
-  
-    //return { props: { finalCurrencies } };
+  // -----------
+  //Jak tohle dostat do Page ?????
+  // -----------
+   // return { props: { finalCurrencies } };   <---------------
+//-----------------------------------------
+
 
 }
 getServerSideProps()
