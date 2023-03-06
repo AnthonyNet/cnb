@@ -1,3 +1,4 @@
+/* 
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
@@ -19,4 +20,5 @@ export default async function handler(
   } catch (error) {
     res.status(500).send(error.message);
   }
-}
+} 
+*/

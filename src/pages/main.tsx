@@ -1,4 +1,4 @@
-import Page from './api/cnb'
+import Page from '../pages/api/again';
 
 function Main () {
 
@@ -6,7 +6,7 @@ function Main () {
      
         <div>
             <h1> Main </h1>
-           
+            <Page />
             <p> Main page </p>
         </div>
 
