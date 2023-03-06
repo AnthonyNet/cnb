@@ -8,9 +8,8 @@ interface Currency {
   currency: string;
 }
 
-function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
-
-
+async function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
+ 
   return (finalCurrencies && console.log(finalCurrencies));
 }
 
@@ -23,30 +22,35 @@ function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
   const data = await res.text();
   const finalCurrencies: Currency[] = [];
 
-  setTimeout(() => {
-    console.log(finalCurrencies);
-  }, 2000);
 
-    setTimeout(() => {
-      //console.log(finalCurrencies);
-      const currenciesArray = data.split("\n");
-      const currenciesArray2 = currenciesArray.slice(2, -1);
-      const currenciesArray3 = currenciesArray2.map((currency) => {
-        const currencyArray = currency.split("|");
+ async function awaitData(){
+  const dataCNB = await data;
   
-  
-        return finalCurrencies.push({
-          country: currencyArray[0],
-          currencyName: currencyArray[1],
-          code: currencyArray[3],
-          amount: currencyArray[4],
-          currency: currencyArray[2],
-        });
-      });
-  
+  const currenciesArray = dataCNB.split("\n");
+  const currenciesArray2 = currenciesArray.slice(2, -1);
+  const currenciesArray3 = currenciesArray2.map((currency) => {
+    const currencyArray = currency.split("|");
+
+
+    return finalCurrencies.push({
+      country: currencyArray[0],
+      currencyName: currencyArray[1],
+      code: currencyArray[3],
+      amount: currencyArray[4],
+      currency: currencyArray[2],
+    });
+  });
+ }
+ awaitData()
+
+ async function logThis(){
+  const dat = await awaitData();
+  console.log('-------------------------')
+  console.log(finalCurrencies);
+ }
+ logThis()
       // Pass data to the page via props
-     
-    }, 1000);
+
   
     //return { props: { finalCurrencies } };
 
