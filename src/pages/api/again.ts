@@ -29,7 +29,9 @@ async function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
   
   const finalCurrencies: Currency[] = [];
 
-  const zpracujData = (data:any)=>{
+  const zpracujData = (data:string)=>{
+   
+    
     const currenciesArray = data.split("\n");
     const currenciesArray2 = currenciesArray.slice(2, -1);
     const currenciesArray3 = currenciesArray2.map((currency) => {
@@ -51,13 +53,12 @@ async function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
 const runIt = async()=>{
   const data = await getServerSideProps();
   zpracujData(data);
-  
   console.log(finalCurrencies);
   
  return {props: {finalCurrencies: zpracujData(data)}}
 }
 
-runIt() 
+runIt();
 
 
 export default Page;
