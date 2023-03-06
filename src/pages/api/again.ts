@@ -23,31 +23,33 @@ function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
   const data = await res.text();
   const finalCurrencies: Currency[] = [];
 
+  setTimeout(() => {
+    console.log(finalCurrencies);
+  }, 2000);
 
     setTimeout(() => {
-      console.log(finalCurrencies);
-    }, 4000);
+      //console.log(finalCurrencies);
+      const currenciesArray = data.split("\n");
+      const currenciesArray2 = currenciesArray.slice(2, -1);
+      const currenciesArray3 = currenciesArray2.map((currency) => {
+        const currencyArray = currency.split("|");
   
-
-  if (data) {
-    const currenciesArray = data.split("\n");
-    const currenciesArray2 = currenciesArray.slice(2, -1);
-    const currenciesArray3 = currenciesArray2.map((currency) => {
-      const currencyArray = currency.split("|");
-
-
-      return finalCurrencies.push({
-        country: currencyArray[0],
-        currencyName: currencyArray[1],
-        code: currencyArray[3],
-        amount: currencyArray[4],
-        currency: currencyArray[2],
+  
+        return finalCurrencies.push({
+          country: currencyArray[0],
+          currencyName: currencyArray[1],
+          code: currencyArray[3],
+          amount: currencyArray[4],
+          currency: currencyArray[2],
+        });
       });
-    });
+  
+      // Pass data to the page via props
+     
+    }, 1000);
+  
+    //return { props: { finalCurrencies } };
 
-    // Pass data to the page via props
-    return { props: { finalCurrencies } };
-  }
 }
 getServerSideProps()
 export default Page;
