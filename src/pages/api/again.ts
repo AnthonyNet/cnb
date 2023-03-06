@@ -51,12 +51,14 @@ async function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
 const runIt = async()=>{
   const data = await getServerSideProps();
   zpracujData(data);
+  
   console.log(finalCurrencies);
   
  return {props: {finalCurrencies: zpracujData(data)}}
 }
 
-runIt()
+runIt() 
 
 
 export default Page;
+ 
