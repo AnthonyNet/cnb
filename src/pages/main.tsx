@@ -1,4 +1,4 @@
-import Page from '../pages/api/again';
+import Page from './api/again';
 
 function Main () {
 
