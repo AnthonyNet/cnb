@@ -29,7 +29,7 @@ async function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
   
   const finalCurrencies: Currency[] = [];
 
-  const zpracujData = (data:any)=>{
+  const zpracujData = (data:string)=>{
     const currenciesArray = data.split("\n");
     const currenciesArray2 = currenciesArray.slice(2, -1);
     const currenciesArray3 = currenciesArray2.map((currency) => {
