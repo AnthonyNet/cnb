@@ -52,6 +52,7 @@ const runIt = async()=>{
   const data = await getServerSideProps();
   zpracujData(data);
   
+  
   console.log(finalCurrencies);
   
  return {props: {finalCurrencies: zpracujData(data)}}
@@ -59,6 +60,9 @@ const runIt = async()=>{
 
 runIt() 
 
+
+
+  
 
 export default Page;
  
