@@ -50,17 +50,20 @@ async function Page({ finalCurrencies }: { finalCurrencies: Currency[] }):any {
 // This should send props to PAGE component WHY DOESN'T IT WORK?
 const runIt = async()=>{
   const data = await getServerSideProps();
-  zpracujData(data);
+  const saveData = zpracujData(data);
   
   
   console.log(finalCurrencies);
   
- return {props: {finalCurrencies: zpracujData(data)}}
+ return {props: {finalCurrencies: saveData}}
 }
 
 runIt() 
 
 
+setTimeout(() => {
+  console.log(finalCurrencies);
+}, 1000);
 
 
   
