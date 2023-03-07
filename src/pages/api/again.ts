@@ -53,12 +53,13 @@ const runIt = async()=>{
   const saveData = zpracujData(data);
   
   
-  //console.log(finalCurrencies);
+  console.log(finalCurrencies);
   
  return {props: {finalCurrencies: saveData}}
 }
 
 runIt() 
+
 
 
   
