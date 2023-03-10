@@ -1,4 +1,4 @@
-import Page from './api/again';
+
 
 interface Currency {
     country: string;
