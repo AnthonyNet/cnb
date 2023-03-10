@@ -36,7 +36,7 @@ export async function getServerSideProps() {
 
 
 function Main ({data}:{data:Currency[]}) {
-console.log(data);
+
 
     return(
      
