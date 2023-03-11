@@ -1,11 +1,13 @@
 
 
 interface Currency {
-    country: string;
+  data: {
+      country: string;
     currencyName: string;
     code: string;
     amount: string;
     currency: string;
+  }
   }
 
 const zpracujData = (data:string)=>{
@@ -36,6 +38,7 @@ export async function getServerSideProps() {
 
 
 function Main ({data}:{data:Currency[]}) {
+console.log(data);
 
 
     return(
