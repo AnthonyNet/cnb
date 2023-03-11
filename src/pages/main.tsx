@@ -1,13 +1,13 @@
+import { FC } from "react";
 
 
 interface Currency {
-  data: {
+
       country: string;
     currencyName: string;
     code: string;
     amount: string;
     currency: string;
-  }
   }
 
 const zpracujData = (data:string)=>{
@@ -37,7 +37,7 @@ export async function getServerSideProps() {
     }
 
 
-function Main ({data}:{data:Currency[]}) {
+const Main:FC<{data:Currency[]}> = ({data}) => {
 console.log(data);
 
 
