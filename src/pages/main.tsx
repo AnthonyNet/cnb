@@ -18,7 +18,7 @@ const zpracujData = (data:string)=>{
             country ,
             currencyName,
             code,
-            amount, 
+            amount,
             currency,
         }
     })
@@ -26,13 +26,16 @@ const zpracujData = (data:string)=>{
 
 
 export async function getServerSideProps() {
-    // Fetch data from external API
+    /* -----------------
+	 Fetch data from external API
+	----------------- */
+
     const res = await fetch(
       "http://www.cnb.cz/cs/financni_trhy/devizovy_trh/kurzy_devizoveho_trhu/denni_kurz.txt"
     );
     const rawData = await res.text();
     const data = zpracujData(rawData);
-    
+
         return {props:{data}}
     }
 
@@ -42,7 +45,7 @@ console.log(data);
 
 
     return(
-     
+
         <div>
             <h1> Main </h1>
            <pre>{JSON.stringify(data)}</pre>
