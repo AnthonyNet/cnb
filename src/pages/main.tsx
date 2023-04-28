@@ -41,7 +41,7 @@ export async function getServerSideProps() {
 
 
 const Main:FC<{data:Currency[]}> = ({data}) => {
-console.log(data);
+//console.log(data);
 
 
     return(
