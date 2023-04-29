@@ -3,7 +3,7 @@ import { FC } from "react";
 
 interface Currency {
 
-      country: string;
+    country: string;
     currencyName: string;
     code: string;
     amount: string;
