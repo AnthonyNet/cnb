@@ -12,6 +12,7 @@ interface Currency {
 
 const zpracujData = (data:string)=>{
 
+
     return data.split('\n').slice(2,-1).map((row)=>{
         const [country,currencyName, currency, code, amount ] = row.split('|');
         return {
@@ -41,7 +42,7 @@ export async function getServerSideProps() {
 
 
 const Main:FC<{data:Currency[]}> = ({data}) => {
-//console.log(data);
+console.log(data);
 
 
     return(
