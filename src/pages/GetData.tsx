@@ -48,7 +48,7 @@ console.log(data);
     return(
 
         <div>
-            <h1> Main </h1>
+
            <pre>{JSON.stringify(data)}</pre>
             <p> Main page </p>
         </div>
