@@ -47,7 +47,7 @@ console.log(data);
 
     return(
 
-        <div>
+        <div className="border-2 border-red-500">
 
            <pre>{JSON.stringify(data)}</pre>
 
