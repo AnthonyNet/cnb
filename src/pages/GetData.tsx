@@ -50,7 +50,7 @@ console.log(data);
         <div>
 
            <pre>{JSON.stringify(data)}</pre>
-            <p> Main page </p>
+
         </div>
 
     )
