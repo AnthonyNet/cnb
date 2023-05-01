@@ -9,7 +9,7 @@ const Home: React.FC = () => {
 
   return (
     <section className='w-screen h-screen'>
-     <h2>df</h2>
+     <h2>Main Page</h2>
 
 		<GetData />
     </section>
