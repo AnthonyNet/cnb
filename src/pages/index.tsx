@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     <section className='w-screen h-screen'>
      <h2>df</h2>
 
-
+<GetData />
     </section>
   )
 }
