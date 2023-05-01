@@ -11,6 +11,7 @@ interface Currency {
   }
 
 const zpracujData = (data:string)=>{
+console.log(data);
 
 
     return data.split('\n').slice(2,-1).map((row)=>{
@@ -41,8 +42,8 @@ export async function getServerSideProps() {
     }
 
 
-const Main:FC<{data:Currency[]}> = ({data}) => {
-console.log(data);
+const GetData:FC<{data:Currency[]}> = ({data}) => {
+//console.log(data);
 
 
     return(
@@ -56,4 +57,4 @@ console.log(data);
     )
 }
 
-export default Main;
+export default GetData;

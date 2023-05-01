@@ -1,7 +1,7 @@
 
 import { Inter } from 'next/font/google'
 
-import GetData from './GetData'
+import GetData from './getdata'
 
 const inter = Inter({ subsets: ['latin'] })
 
